@@ -9,49 +9,84 @@ function validateForm() {
   var org = document.getElementById("org");
   var ammatti = document.getElementById("ammatti");
   var bd = document.getElementById("bd");
-  var bm = document.getElementById("bm");
-  var by = document.getElementById("by");
-  var hinta = document.getElementById("hinta");
+  var hinta = document.getElementsByName("hinta");
+  var summary = document.getElementById("valSummary");
   var errors = "";
 
   if(enimi.value == "") {
     errors += "<li>Etunimi puuttuu</li>";
-    enimi.style.border = "1px solid #ff0000";
+    enimi.style.outline = "1px solid #ff0000";
+  } else {
+    enimi.style.outline = "none";
   }
 
   if(snimi.value == "") {
     errors += "<li>Sukunimi puuttuu</li>";
-    snimi.style.border = "1px solid #ff0000";
+    snimi.style.outline = "1px solid #ff0000";
+  } else {
+    snimi.style.outline = "none";
   }
 
   if(losoite.value == "") {
     errors += "<li>Lähiosoite puuttuu</li>";
-    losoite.style.border = "1px solid #ff0000";
+    losoite.style.outline = "1px solid #ff0000";
+  } else {
+    losoite.style.outline = "none";
   }
 
   if(postinro.value == "") {
     errors += "<li>Postinumero puuttuu</li>";
-    postinro.style.border = "1px solid #ff0000";
+    postinro.style.outline = "1px solid #ff0000";
+  } else {
+    postinro.style.outline = "none";
   }
 
   if(postitp.value == "") {
     errors += "<li>Postitoimipaikka puuttuu</li>";
-    postitp.style.border = "1px solid #ff0000";
+    postitp.style.outline = "1px solid #ff0000";
+  } else {
+    postitp.style.outline = "none";
   }
 
   if(puh.value == "") {
     errors += "<li>Puhelinnumero puuttuu</li>";
-    puh.style.border = "1px solid #ff0000";
+    puh.style.outline = "1px solid #ff0000";
+  } else {
+    puh.style.outline = "none";
   }
 
   if(email.value == "") {
     errors += "<li>Sähköpostiosoite puuttuu</li>";
-    email.style.border = "1px solid #ff0000";
+    email.style.outline = "1px solid #ff0000";
+  } else {
+    email.style.outline = "none";
+  }
+
+  if(bd.value == "") {
+    errors += "<li>Syntymäpäivä on pakollinen</li>";
+    bd.style.outline = "1px solid #ff0000";
+  } else {
+    bd.style.outline = "none";
+  }
+
+    var hintaCheck=-1;
+  for (var i=0; i < hinta.length;i++)
+  {
+    if (hinta[i].checked)
+    {
+        hintaCheck=i;
+    }
+  }
+
+  if(hintaCheck==-1)
+  {
+    errors += "<li>Valitse hinta</i>";
   }
 
   if(errors.length) {
-    document.getElementById("valSummary").innerHTML =
+    summary.innerHTML =
     "<font color=#ff0000><b>Korjaa seuraavat kohdat:</b><ul>" + errors + "</ul></font>";
+    summary.focus();
     return false;
   }
 }
