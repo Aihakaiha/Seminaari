@@ -13,18 +13,18 @@ function validateForm() {
   var summary = document.getElementById("valSummary");
   var errors = "";
 
-  if(enimi.value == "") {
-    errors += "<li>Etunimi puuttuu</li>";
-    enimi.style.outline = "1px solid #ff0000";
-  } else {
-    enimi.style.outline = "none";
-  }
-
   if(snimi.value == "") {
     errors += "<li>Sukunimi puuttuu</li>";
     snimi.style.outline = "1px solid #ff0000";
   } else {
     snimi.style.outline = "none";
+  }
+
+  if(enimi.value == "") {
+    errors += "<li>Etunimi puuttuu</li>";
+    enimi.style.outline = "1px solid #ff0000";
+  } else {
+    enimi.style.outline = "none";
   }
 
   if(losoite.value == "") {
@@ -86,7 +86,7 @@ function validateForm() {
   if(errors.length) {
     summary.innerHTML =
     "<font color=#ff0000><b>Korjaa seuraavat kohdat:</b><ul>" + errors + "</ul></font>";
-    summary.focus();
+    summary.focus()
     return false;
   }
 }
