@@ -14,52 +14,66 @@ function validateForm() {
   var errors = "";
 
   if(snimi.value == "") {
-    errors += "<li>Sukunimi puuttuu</li>";
+    errors += "<li>Sukunimi on pakollinen</li>";
     snimi.style.outline = "1px solid #ff0000";
   } else {
     snimi.style.outline = "none";
   }
 
   if(enimi.value == "") {
-    errors += "<li>Etunimi puuttuu</li>";
+    errors += "<li>Etunimi on pakollinen</li>";
     enimi.style.outline = "1px solid #ff0000";
   } else {
     enimi.style.outline = "none";
   }
 
   if(losoite.value == "") {
-    errors += "<li>Lähiosoite puuttuu</li>";
+    errors += "<li>Lähiosoite on pakollinen</li>";
     losoite.style.outline = "1px solid #ff0000";
   } else {
     losoite.style.outline = "none";
   }
 
   if(postinro.value == "") {
-    errors += "<li>Postinumero puuttuu</li>";
+    errors += "<li>Postinumero on pakollinen</li>";
     postinro.style.outline = "1px solid #ff0000";
   } else {
     postinro.style.outline = "none";
   }
 
   if(postitp.value == "") {
-    errors += "<li>Postitoimipaikka puuttuu</li>";
+    errors += "<li>Postitoimipaikka on pakollinen</li>";
     postitp.style.outline = "1px solid #ff0000";
   } else {
     postitp.style.outline = "none";
   }
 
   if(puh.value == "") {
-    errors += "<li>Puhelinnumero puuttuu</li>";
+    errors += "<li>Puhelinnumero on pakollinen</li>";
     puh.style.outline = "1px solid #ff0000";
   } else {
     puh.style.outline = "none";
   }
 
   if(email.value == "") {
-    errors += "<li>Sähköpostiosoite puuttuu</li>";
+    errors += "<li>Sähköpostiosoite on pakollinen</li>";
     email.style.outline = "1px solid #ff0000";
   } else {
     email.style.outline = "none";
+  }
+
+  if(org.value == "") {
+    errors += "<li>Työnantaja / Oppilaitos on pakollinen</li>";
+    org.style.outline = "1px solid #ff0000";
+  } else {
+    org.style.outline = "none";
+  }
+
+  if(ammatti.value == "") {
+    errors += "<li>Ammatti on pakollinen</li>";
+    ammatti.style.outline = "1px solid #ff0000";
+  } else {
+    ammatti.style.outline = "none";
   }
 
   if(bd.value == "") {
@@ -80,7 +94,7 @@ function validateForm() {
 
   if(hintaCheck==-1)
   {
-    errors += "<li>Valitse hinta</i>";
+    errors += "<li>Hinta on pakollinen</i>";
   }
 
   if(errors.length) {
