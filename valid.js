@@ -35,11 +35,23 @@ function validateForm() {
     losoite.style.outline = "none";
   }
 
+  if(isNaN(postinro.value)) {
+    errors += "<li>Vain numeroita postinumero kenttään</li>";
+    postinro.style.outline = "1px solid #ff0000";
+  } else {
+    postinro.style.outline = "none";
+  }
+
+
   if(postinro.value == "") {
     errors += "<li>Postinumero on pakollinen</li>";
     postinro.style.outline = "1px solid #ff0000";
   } else {
-    postinro.style.outline = "none";
+      if(isNaN(postinro.value)) {
+        postinro.style.outline = "1px solid #ff0000";
+      } else {
+        postinro.style.outline = "none";
+      }
   }
 
   if(postitp.value == "") {
@@ -49,12 +61,25 @@ function validateForm() {
     postitp.style.outline = "none";
   }
 
-  if(puh.value == "") {
-    errors += "<li>Puhelinnumero on pakollinen</li>";
+  if(isNaN(puh.value)) {
+    errors += "<li>Vain numeroita puhelinnumero kenttään</li>";
     puh.style.outline = "1px solid #ff0000";
   } else {
     puh.style.outline = "none";
   }
+
+  if(puh.value == "") {
+    errors += "<li>Puhelinnumero on pakollinen</li>";
+    puh.style.outline = "1px solid #ff0000";
+  } else {
+      if(isNaN(puh.value)) {
+        puh.style.outline = "1px solid #ff0000";
+      } else {
+        puh.style.outline = "none";
+      }
+  }
+
+
 
   if(email.value == "") {
     errors += "<li>Sähköpostiosoite on pakollinen</li>";
