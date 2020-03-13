@@ -10,6 +10,7 @@ function validateForm() {
   var ammatti = document.getElementById("ammatti");
   var bd = document.getElementById("bd");
   var hinta = document.getElementsByName("hinta");
+  var hintaStyle = document.getElementById("hinta").style;
   var summary = document.getElementById("valSummary");
   var errors = "";
 
@@ -84,17 +85,18 @@ function validateForm() {
   }
 
     var hintaCheck=-1;
-  for (var i=0; i < hinta.length;i++)
-  {
-    if (hinta[i].checked)
-    {
+  for (var i=0; i < hinta.length;i++) {
+
+    if (hinta[i].checked) {
         hintaCheck=i;
     }
   }
 
-  if(hintaCheck==-1)
-  {
+  if(hintaCheck==-1) {
     errors += "<li>Hinta on pakollinen</i>";
+    hintaStyle.outline = "1px solid #ff0000";
+  } else {
+    hintaStyle.outline = "none";
   }
 
   if(errors.length) {
