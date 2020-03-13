@@ -8,4 +8,4 @@ MASTERED BY:
 Unna Postila - JavaScript
 Tony Lehtonen - HTML + 2 kuva
 Ranar Klopp - php ja tietokannan rekisteri'
-Elias Sivonen - CSS
+Elias Sivonen - CSS + palautus
