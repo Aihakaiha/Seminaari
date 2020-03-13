@@ -3,48 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <title>Lomake</title>
+        <script src="valid.js"></script>
     </head>
     <body>
-        <div id="valSummary">
-            <form action="adminregisteri.php" method="get">
+        <div id="valSummary"></div>
+            <form action="" method="get" name="lomake" onsubmit="return validateForm()">
                 <p>Sukunimi</p>
-                    <input type="text" name="lomake" id="snimi">
+                    <input type="text" name="snimi" id="snimi">
                 <p>Etunimi</p>
-                    <input type="text" name="lomake" id="enimi">
+                    <input type="text" name="enimi" id="enimi">
                 <p>Lähiosoite</p>
-                    <input type="text" name="lomake" id="losoite">
+                    <input type="text" name="losoite" id="losoite">
                 <p>Postinumero</p>
-                    <input type="text" name="lomake" id="postinro">
+                    <input type="text" name="postinro" id="postinro">
                 <p>Postitoimipaikka</p>
-                    <input type="text" name="lomake" id="postitp">
+                    <input type="text" name="postitp" id="postitp">
                 <p>Puhelinnumero</p>
-                    <input type="text" name="lomake" id="puh">
+                    <input type="text" name="puh" id="puh">
                 <p>Sähköposti</p>
-                    <input type="text" name="lomake" id="sahkop">
+                    <input type="text" name="email" id="email">
                 <p>Työnantaja tai jos opiskelija oppilaitos</p>
-                    <input type="text" name="lomake" id="org">
+                    <input type="text" name="org" id="org">
                 <p>Ammatti, Jos olet opiskelija niin kirjoita opiskelija</p>
-                    <input type="text" name="lomake" id="ammatti">
+                    <input type="text" name="ammatti" id="ammatti">
                 <p>Syntymäaika</p>
-                    <input type="date" name="lomake" id="bd">
+                    <input type="date" name="bd" id="bd">
                 <p>Tapahtuman hintavaihtoehdot</p>
                     <hr>
-                    <input type="radio" name="hinta" id="hinta">
+                    <input type="radio" name="hinta" id="hinta1">
                         <label for="100$">Peruspaketti 100$</label>
                             <br>
-                    <input type="radio" name="hinta" id="hinta">
+                    <input type="radio" name="hinta" id="hinta2">
                         <label for="200$">Peruspaketti+parkkipaikka 200$</label>
                             <br>
-                    <input type="radio" name="hinta" id="hinta">
+                    <input type="radio" name="hinta" id="hinta3">
                         <label for="201$">Kaikki 201$</label>
                             <hr>
                 <p>Erikoisruokavalio</p>
-                    <input type="text" name="lomake" id="erv">
+                    <input type="text" name="erv" id="erv">
                 <p>Lisätietoja</p>
                     <textarea id="lisainfo" rows="5" cols="50"></textarea>
                         <br>
                     <input type="submit" value="Lähetä" id="laheta">
             </form>
-        </div>
     </body>
 </html>
