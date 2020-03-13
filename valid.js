@@ -1,6 +1,6 @@
 function validateForm() {
-  var enimi = document.getElementById("enimi");
   var snimi = document.getElementById("snimi");
+  var enimi = document.getElementById("enimi");
   var losoite = document.getElementById("losoite");
   var postinro = document.getElementById("postinro");
   var postitp = document.getElementById("postitp");
@@ -14,99 +14,78 @@ function validateForm() {
   var summary = document.getElementById("valSummary");
   var errors = "";
 
+  snimi.style.outline = "none";
+  enimi.style.ouline = "none";
+  losoite.style.outline = "none";
+  postinro.style.ouline = "none";
+  postitp.style.outline = "none";
+  puh.style.ouline = "none";
+  email.style.outline = "none";
+  org.style.ouline = "none";
+  ammatti.style.outline = "none";
+  bd.style.ouline = "none";
+  hintaStyle.outline = "none";
+  summary.style.ouline = "none";
+
   if(snimi.value == "") {
     errors += "<li>Sukunimi on pakollinen</li>";
     snimi.style.outline = "1px solid #ff0000";
-  } else {
-    snimi.style.outline = "none";
   }
 
   if(enimi.value == "") {
     errors += "<li>Etunimi on pakollinen</li>";
     enimi.style.outline = "1px solid #ff0000";
-  } else {
-    enimi.style.outline = "none";
   }
 
   if(losoite.value == "") {
     errors += "<li>Lähiosoite on pakollinen</li>";
     losoite.style.outline = "1px solid #ff0000";
-  } else {
-    losoite.style.outline = "none";
   }
 
   if(isNaN(postinro.value)) {
     errors += "<li>Vain numeroita postinumero kenttään</li>";
     postinro.style.outline = "1px solid #ff0000";
-  } else {
-    postinro.style.outline = "none";
   }
 
 
   if(postinro.value == "") {
     errors += "<li>Postinumero on pakollinen</li>";
     postinro.style.outline = "1px solid #ff0000";
-  } else {
-      if(isNaN(postinro.value)) {
-        postinro.style.outline = "1px solid #ff0000";
-      } else {
-        postinro.style.outline = "none";
-      }
   }
 
   if(postitp.value == "") {
     errors += "<li>Postitoimipaikka on pakollinen</li>";
     postitp.style.outline = "1px solid #ff0000";
-  } else {
-    postitp.style.outline = "none";
   }
 
   if(isNaN(puh.value)) {
     errors += "<li>Vain numeroita puhelinnumero kenttään</li>";
     puh.style.outline = "1px solid #ff0000";
-  } else {
-    puh.style.outline = "none";
   }
 
   if(puh.value == "") {
     errors += "<li>Puhelinnumero on pakollinen</li>";
     puh.style.outline = "1px solid #ff0000";
-  } else {
-      if(isNaN(puh.value)) {
-        puh.style.outline = "1px solid #ff0000";
-      } else {
-        puh.style.outline = "none";
-      }
   }
-
-
 
   if(email.value == "") {
     errors += "<li>Sähköpostiosoite on pakollinen</li>";
     email.style.outline = "1px solid #ff0000";
-  } else {
-    email.style.outline = "none";
   }
 
   if(org.value == "") {
     errors += "<li>Työnantaja / Oppilaitos on pakollinen</li>";
     org.style.outline = "1px solid #ff0000";
-  } else {
-    org.style.outline = "none";
   }
 
   if(ammatti.value == "") {
     errors += "<li>Ammatti on pakollinen</li>";
     ammatti.style.outline = "1px solid #ff0000";
-  } else {
-    ammatti.style.outline = "none";
   }
 
   if(bd.value == "") {
     errors += "<li>Syntymäpäivä on pakollinen</li>";
     bd.style.outline = "1px solid #ff0000";
-  } else {
-    bd.style.outline = "none";
   }
 
     var hintaCheck=-1;
@@ -120,8 +99,6 @@ function validateForm() {
   if(hintaCheck==-1) {
     errors += "<li>Hinta on pakollinen</i>";
     hintaStyle.outline = "1px solid #ff0000";
-  } else {
-    hintaStyle.outline = "none";
   }
 
   if(errors.length) {
